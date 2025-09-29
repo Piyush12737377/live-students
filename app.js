@@ -65,7 +65,7 @@ function handleClearDoubt() {
 
 function handleGlobalKeyPress(event) {
     const activeElement = document.activeElement;
-    if (event.key.length === 1 && !['INPUT', 'SELECT', 'TEXTAREA'].includes(activeElement.tagName) && chatView.className !== 'hidden') {
+    if (event.key.length === 1 && !['INPUT', 'SELECT', 'TEXTAREA'].includes(activeElement.tagName) && chatView.className !== 'hidden' ) {
         chatInputField.focus();
     }
 }
