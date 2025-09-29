@@ -1,0 +1,468 @@
+/* yahan saare main colors hain */
+:root {
+    --primary-color: #15181c;
+    --light-gray: #ffffff;
+    --medium-gray: #e9ecef;
+    --dark-gray: #21394e;
+    --white: #ffffff;
+    --border-radius: 8px;
+}
+
+/* poori website ka basic setup */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #142331;
+    color: #333;
+    display: flex;
+    height: 100vh;
+}
+
+/* left wala section */
+.sidebar {
+    width: 280px;
+    background-color: #1f3645;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* right wala bada hissa */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start; /* Prevents child elements from stretching vertically */
+    overflow-y: auto;
+}
+
+/* sidebar ke andar ke dibbe */
+.status-selector, .student-list {
+    background-color: #253f51;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 8px 8px 12px #00050a;
+
+}
+
+/* headings ka style */
+h1, h2, h3 {
+    color: #909fae;
+}
+h1 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* chhoti headings */
+h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+/* select ke upar wale text */
+label {
+    color: #7491ae;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 0.1rem;
+}
+
+/* class subject chapter wale dropdowns */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #1f3645; /* Dark background for the selector */
+    color: #c8d1d9; /* Light text color */
+    border: 1px solid #3a556b; /* Themed border */
+    -webkit-appearance: none; /* Removes default browser styling */
+    -moz-appearance: none;
+    appearance: none;
+    /* Custom dropdown arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%237491ae%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 10px;
+}
+
+/* jab dropdown me kuch select na ho */
+select:invalid {
+    color: #7491ae; /* Placeholder text color */
+}
+
+/* chat dikhane wali screen */
+.chat-window {
+    flex-grow: 1;
+    background-color: #0e161b;
+    /* New cross-wise background pattern */
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l20 20M20 0l-20 20' stroke='%2315212b' stroke-width='3' fill='none' stroke-opacity='0.4'/%3E%3C/svg%3E");
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 5px solid #18232c;
+    box-shadow: inset 0 2px 12px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow scrolling */
+    overflow-y: auto;
+}
+
+/* chat window ke scrollbar ka style */
+.chat-window::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+    background: transparent; /* track ko background jaisa rakho */
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    background-color: #0544378b; /* scrollbar ka naya green color */
+    border-radius: 10px;
+    border: 2px solid #0e161b; /* scrollbar ke charo taraf halka border */
+}
+
+/* user panels ke scrollbar ka style */
+#initial-student-view::-webkit-scrollbar,
+#chat-sidebar-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#initial-student-view::-webkit-scrollbar-track,
+#chat-sidebar-container::-webkit-scrollbar-track {
+    background: transparent;
+    background-color: #06705900;
+}
+
+#initial-student-view::-webkit-scrollbar-thumb,
+#chat-sidebar-container::-webkit-scrollbar-thumb {
+    background-color: #06675262;
+    border-radius: 10px;
+}
+
+/* har ek message ka style */
+.message {
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    position: relative;
+    color: #e6e6e6;
+}
+
+/* jo message receive hua */
+.message.received {
+    background-color: #262d31;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+/* jo message bheja gaya */
+.message.sent {
+    background-color: #056162;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+/* message me bhejnewale ka naam */
+.message strong {
+    display: block;
+    color: #53bdeb;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* message ke andar time */
+.message .timestamp {
+    font-size: 0.75rem;
+    color: #aebac1;
+    float: right;
+    margin-left: 10px;
+    margin-top: 8px;
+    position: relative;
+    bottom: -4px;
+}
+/* message type karne wala area */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #2a3942; /* Unified background color */
+    border-radius: 8px; /* Rounded container */
+    margin-top: 10px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,1); /* Subtle shadow for depth */
+}
+
+/* message likhne ka box */
+.chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background-color: transparent; /* Blends with the container */
+    color: #e6e6e6;
+    margin: 0 5px;
+    font-size: 1rem;
+}
+
+/* saare buttons ka common style */
+button {
+    background-color: transparent;
+    color: #00a884; /* Green text color */
+    border: 0.2px solid #00a884; /* Green border */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* button par mouse le jaane par */
+button:hover {
+    background-color: #00a884; /* hover par background green ho jayega */
+    color:  #142331; /* hover par text ka color dark ho jayega */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* button ke charo taraf glow */
+    transform: translateY(-1px); /* button thoda upar uthega */
+}
+
+/* send button ka style */
+#send-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* poora gol */
+    padding: 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mark as Cleared button in chat header */
+#clear-doubt-btn {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+}
+
+/* student list ke chote chat button */
+.student-card .chat-btn {
+    width: auto;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: normal;
+    border-radius: 15px;
+}
+
+/* student list me har student ka card */
+.student-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+/* list ke aakhri student ke liye */
+.student-card:last-child {
+    border-bottom: none;
+}
+
+/* student ka naam */
+.student-name {
+    font-weight: bold;
+    color: #c8d1d9;
+}
+
+/* Style for student cards with cleared doubts */
+.student-card.doubt-cleared .student-name {
+    color: #7491ae; /* Dim the name */
+    text-decoration: line-through;
+}
+
+.student-card.doubt-cleared .status-dot {
+    background-color: #7491ae; /* Dim the status dot */
+}
+
+/* Green checkmark for cleared users */
+.cleared-indicator {
+    color: #00a884;
+    padding: 4px 12px;
+}
+
+/* online status wali green dot */
+.status-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #28a745; /* Green for online */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Initial view for student list */
+#initial-student-view {
+    width: 100%;
+    padding: 20px;
+    max-height: 90vh; /* Limit height */
+    overflow-y: auto; /* Make it scrollable */
+}
+
+/* Main chat view layout */
+#chat-view {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    height: 100%; /* Take full available height */
+}
+
+#chat-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Prevents chat window from overflowing its container */
+}
+
+/* container for chat header and clear button */
+.chat-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Right sidebar for quick chat switching */
+#chat-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background-color: #253f51;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 8px 8px 12px #00050a;
+}
+
+#chat-sidebar-container {
+    max-height: 70vh; /* Limit height */
+    overflow-y: auto; /* Make it scrollable */
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    /* body layout becomes vertical */
+    body, #main-app-view {
+        flex-direction: column;
+        height: auto; /* Allow content to determine height */
+    }
+
+    /* sidebar takes full width */
+    .sidebar {
+        width: 100%;
+        box-sizing: border-box; /* Include padding in width */
+        height: auto;
+        border-right: none;
+    }
+
+    /* main content area adjustments */
+    .main-content {
+        padding: 10px;
+    }
+
+    /* chat view stacks vertically */
+    #chat-view {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* chat sidebar is hidden on mobile to save space */
+    #chat-sidebar {
+        display: none;
+    }
+
+    /* Adjust headings for smaller screens */
+    h1 {
+        font-size: 1.3rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    /* Make chat input more compact */
+    .chat-input {
+        padding: 5px;
+    }
+    #send-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Fix chat window scrolling on mobile */
+    .chat-window {
+        height: 60vh; /* Give it a fixed height to enable scrolling */
+    }
+
+    /* Styles for when the mobile keyboard is open */
+    .keyboard-open .chat-input {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0;
+        margin-top: 0;
+    }
+
+    .keyboard-open .chat-window {
+        padding-bottom: 70px; /* Add space at the bottom for the fixed input bar */
+    }
+}
+
+/* --- Responsive Design for VERY Small Mobile Screens --- */
+@media (max-width: 400px) {
+    /* Make base font smaller to scale down rem units */
+    body {
+        font-size: 14px;
+    }
+
+    /* Further reduce padding */
+    .sidebar, .main-content, .status-selector, #chat-sidebar {
+        padding: 8px;
+    }
+
+    /* Make fonts even smaller */
+    h1 {
+        font-size: 1.1rem;
+        padding-bottom: 5px;
+    }
+    h2 {
+        font-size: 0.9rem;
+    }
+    .student-name {
+        font-size: 0.85rem;
+    }
+    .chat-input input {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    /* Make message bubbles more compact */
+    .message {
+        max-width: 85%; /* Allow bubbles to be a bit wider */
+        padding: 6px 10px;
+    }
+
+    /* Adjust initial user grid for very small screens */
+    #initial-student-view {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+        gap: 10px;
+        padding: 10px;
+    }
+}
