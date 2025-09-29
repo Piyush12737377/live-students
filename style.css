@@ -413,14 +413,10 @@ button:hover {
         position: fixed;
         bottom: 0;
         left: 0;
-        right: 0;
         width: 100%;
         box-sizing: border-box;
         border-radius: 0;
         margin-top: 0;
-    }
-
-    .keyboard-open .chat-window {
         padding-bottom: 70px; /* Add space at the bottom for the fixed input bar */
     }
 }
