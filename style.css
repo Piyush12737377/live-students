@@ -110,7 +110,6 @@ select:invalid {
     display: flex;
     flex-direction: column;
     overflow-y: auto; /* Allow scrolling */
-    overflow-y: auto;
 }
 
 /* chat window ke scrollbar ka style */
@@ -322,7 +321,7 @@ button:hover {
     display: flex;
     width: 100%;
     gap: 20px;
-    height: 100%; /* Take full available height */
+    height: calc(100vh - 40px); /* Take full available height minus padding */
 }
 
 #chat-area {
@@ -330,6 +329,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     min-height: 0; /* Prevents chat window from overflowing its container */
+    height: 100%;
 }
 
 /* container for chat header and clear button */
